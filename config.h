@@ -63,14 +63,15 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-    { netspeed_rx, "|  %s| ",  "eth0"    },
-    { netspeed_tx, " %s| ",    "eth0"    },
+    { netspeed_rx, " %s ",  "eth0"    },
+    { netspeed_tx, " %s ",    "eth0"    },
     { cpu_perc, " %s%%  ",     NULL       },
-//  { temp, " %s°C | ",        "/sys/class/thermal/thermal_zone1/temp" },
-    { ram_perc, " %s%% | ",    NULL       },
-    { disk_free, " %s | ",     "/"        },
-    { datetime, " %s | ",      "%F %T"    },
-//  { datetime, " %s | ",      "%Y-%m(%b)-%d(%a) %T" },
+//  { temp, " %s°C  ",        "/sys/class/thermal/thermal_zone1/temp" },
+    { run_command, ": %4s ", "pactl list sinks | grep Volume | head -n1 | awk '{print $5}'"},
+    { ram_perc, " %s%%  ",    NULL       },
+    { disk_free, " %s  ",     "/"        },
+    { datetime, " %s  ",      "%D %r" },
+//  { datetime, " %s  ",      "%Y-%m(%b)-%d(%a) %T" },
 
 //  { battery_perc, " %s",  "BAT0"     },
 };
