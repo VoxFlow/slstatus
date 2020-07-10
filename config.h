@@ -67,7 +67,7 @@ static const struct arg args[] = {
     { netspeed_tx, " %s ",    "eth0"    },
     { cpu_perc, " %s%%  ",     NULL       },
 //  { temp, " %s°C  ",        "/sys/class/thermal/thermal_zone1/temp" },
-    { run_command, ": %4s ", "pactl list sinks | grep Volume | head -n1 | awk '{print $5}'"},
+    { run_command, ": %4s ", "pamixer --get-volume"	},
     { ram_perc, " %s%%  ",    NULL       },
     { disk_free, " %s  ",     "/"        },
     { datetime, " %s  ",      "%D %r" },
